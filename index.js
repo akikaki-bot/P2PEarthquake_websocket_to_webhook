@@ -3,75 +3,7 @@ const app = express()
 const PORT = process.env.PORT || 8080
 // Licence MIT (c) 2022 akikaki
 app.use('/',(req,res) => {
-res.send(`<html>
-<head><style>.ie_alert{
-    position: fixed;
-    top: 5%;
-    left: 5%;
-    width: 90%;
-    height: 90%;
-    background: rgb(196, 52, 52); /* rgba未対応の古いIE用 */
-    background: rgba(196, 52, 52, 0.95);
-    text-align: center;
-    padding: 10% 0;
-    z-index: 1000;
-    span,p,a{
-        color: #fff;
-    }
-    span{
-        display: block;
-        font-size: 80px;
-    }
-    p{
-        font-size: 20px;
-    }
-    a{
-        display: inline-block;
-        font-size: 16px;
-        margin-top: 20px;
-        padding: 8px 80px;
-        border: solid 1px #fff;
-        &:hover{
-            background: rgba(255,255,255,0.1);
-        }
-    }
-}</style>
-<title>WebSocketService</title></head>
-<body bgcolor="white">
-<center><h1>201 WebSocketService OK</h1></center>
-<hr><center>WSS () 2022 akikaki</center>
-<div id="ie_warning"></div>
-<script>
-  /* IE判定関数を定義しておく */
-  function isIE() {
-    var userAgent = window.navigator.userAgent.toLowerCase();
-    if ( userAgent.indexOf( 'msie' ) !== -1 || userAgent.indexOf( 'trident' ) !== -1 ) {
-        return true;
-    }
-    return false;
-  }
-
-  /* DOM構造読み込み完了後にアラート表示のHTMLを挿入 */
-  document.addEventListener("DOMContentLoaded", function () {
-    if ( isIE() ) {
-      var footer = document.getElementById('footer');  //アラート表示を挿入する場所
-      var ieDiv = document.getElementById('ie_warning');      //div要素の生成               
-
-      var ieAlert = '<span>Internet Explorer、ダメ絶対！</span>';
-      ieAlert += '<p>あなたが使用している <b>Internet Explorer</b> というブラウザはとても古いものです。<br>';
-      ieAlert += '言ってしまえば、百害あって一利なしの老害です。<br>';
-      ieAlert += '世界中で、多くのWEB制作者があなたの <b>Internet Explorer</b> のせいで苦悩しています。<br><br>';
-      ieAlert += 'どうか、<b>最新のモダンブラウザ（EdgeやFirefox、Google Chrome）</b>をお使いください。</p>';
-      ieAlert += '<a href="https://www.google.co.jp/chrome/index.html">Google Chromeをダウンロード</a>';
-      ieDiv.innerHTML = ieAlert;
-    }
-  });
-</script>
-</body>
-<!--[if IE]>
-<script> alert('You are use IE. Plz use modanbrowser.') </script>
-<![endif]-->
-</html>`)
+res.sendFile(__dirname + '/index.html');
 })
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}でサーバーを開始しました。`)
