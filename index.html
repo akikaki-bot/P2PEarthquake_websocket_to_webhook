@@ -1,5 +1,8 @@
 <html>
-<head><style>.ie_alert{
+<head>
+  <style>
+    
+    .ie_warning{
     position: fixed;
     top: 5%;
     left: 5%;
@@ -30,13 +33,27 @@
             background: rgba(255,255,255,0.1);
         }
     }
-}</style>
+}
+  
+</style>
 <title>WebSocketService</title></head>
-<body bgcolor="white">
+<body bgcolor="white"id="bg">
 <center><h1>201 WebSocketService OK</h1></center>
 <hr><center>WSS () 2022 akikaki</center>
+<button id="bgcolorchange" onclick="change()">スタイル</button>
 <div id="ie_warning"></div>
 <script>
+  function change(){
+  var stlyechange = document.getElementById("bg")
+ // //  console.log(settings)
+ // if(stlyechange.stlye.background  = "black"){
+  //stlyechange.stlye.background  = "white"
+ // } else {
+    stlyechange.stlye.background  = "#00001"
+ // }
+  }
+
+  
   /* IE判定関数を定義しておく */
   function isIE() {
     var userAgent = window.navigator.userAgent.toLowerCase();

@@ -1,0 +1,34 @@
+
+    .ie_warning{
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background: rgb(196, 52, 52); /* rgba未対応の古いIE用 */
+    background: rgba(196, 52, 52, 0.95);
+    text-align: center;
+    padding: 10% 0;
+    z-index: 1000;
+    span,p,a{
+        color: #fff;
+    }
+    span{
+        display: block;
+        font-size: 80px;
+    }
+    p{
+        font-size: 20px;
+    }
+    a{
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 20px;
+        padding: 8px 80px;
+        border: solid 1px #fff;
+        &:hover{
+            background: rgba(255,255,255,0.1);
+        }
+    }
+}
+  
